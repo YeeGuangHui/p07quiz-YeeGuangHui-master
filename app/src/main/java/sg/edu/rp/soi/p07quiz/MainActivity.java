@@ -27,9 +27,17 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
         lv = findViewById(R.id.lv);
 
-        al = new ArrayList<>();
+        ArrayList<String> al = new ArrayList<>();
+        public void onItemSelected(AdapterView spinner, View lv, int position, long id) {
+            switch (position) {
+                case 0:
 
+                    break;
+                case 1:
 
+                    break;
+            }
+        }
 
 
         aa = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, al );
@@ -40,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0: //logcat
-
+                        (spinner.getText().toString().equals("0"));
+                        Log.i("MyActivity","Item Clicked: "+spinner);
                         break;
                     case 1: //Toast
-
+                        (spinner.getText().toString().equals("0"));
+                        Toast.makeText(MainActivity.this, "Item Clicked: "+spinner, Toast.LENGTH_LONG).show();
                         break;
                 }
             }
